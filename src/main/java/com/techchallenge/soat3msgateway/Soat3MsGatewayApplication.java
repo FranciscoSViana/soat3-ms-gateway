@@ -20,6 +20,7 @@ public class Soat3MsGatewayApplication {
 	public RouteLocator routes(RouteLocatorBuilder builder) {
 		return builder.routes()
 				.route("soat3-ms-clientes", r -> r.path("/v1/clientes/**").uri("lb://soat3-ms-clientes"))
+				.route("soat3-ms-produtos", r -> r.path("/v1/produtos/**").uri("lb://soat3-ms-produtos"))
 				.build();
 	}
 
