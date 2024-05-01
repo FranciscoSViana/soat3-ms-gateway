@@ -16,11 +16,13 @@ public class Soat3MsGatewayApplication {
 		SpringApplication.run(Soat3MsGatewayApplication.class, args);
 	}
 
+
 	@Bean
 	public RouteLocator routes(RouteLocatorBuilder builder) {
 		return builder.routes()
 				.route("soat3-ms-clientes", r -> r.path("/v1/clientes/**").uri("lb://soat3-ms-clientes"))
 				.route("soat3-ms-produtos", r -> r.path("/v1/produtos/**").uri("lb://soat3-ms-produtos"))
+				.route("soat3-ms-pagamentos", r -> r.path("/v1/pagamentos/**").uri("lb://soat3-ms-pagamentos"))
 				.build();
 	}
 
