@@ -23,6 +23,7 @@ public class Soat3MsGatewayApplication {
 				.route("soat3-ms-clientes", r -> r.path("/v1/clientes/**").uri("lb://soat3-ms-clientes"))
 				.route("soat3-ms-produtos", r -> r.path("/v1/produtos/**").uri("lb://soat3-ms-produtos"))
 				.route("soat3-ms-pagamentos", r -> r.path("/v1/pagamentos/**").uri("lb://soat3-ms-pagamentos"))
+				.route("soat3-ms-pedidos", r -> r.path("/v1/pedidos/**").uri("lb://soat3-ms-pedidos"))
 				.build();
 	}
 
