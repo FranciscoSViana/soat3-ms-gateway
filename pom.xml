@@ -5,8 +5,9 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.techchallenge</groupId>
-	<artifactId>soat3msgateway</artifactId>
-	<version>1.0.0</version>
+	<artifactId>soat3-ms-gateway</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>soat3-ms-gateway</name>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

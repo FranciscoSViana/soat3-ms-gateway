@@ -1,4 +1,4 @@
-package com.techchallenge.soat3msgateway;
+package com.techchallenge.soat3mseureka;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
