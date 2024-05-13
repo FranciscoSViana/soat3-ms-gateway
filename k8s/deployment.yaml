@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: soat3-ms-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: soat3-ms-gateway
+  template:
+    metadata:
+      labels:
+        app: soat3-ms-gateway
+    spec:
+      containers:
+        - name: soat3-ms-gateway
+          image: franciscosviana/soat3-ms-gateway:v1
+          ports:
+            - containerPort: 9090
+          env:
+            - name: CLIENTES_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: soat3-config
+                  key: CLIENTES_URL
+            - name: PRODUTOS_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: soat3-config
+                  key: PRODUTOS_URL
+            - name: PAGAMENTOS_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: soat3-config
+                  key: PAGAMENTOS_URL
+            - name: PEDIDOS_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: soat3-config
+                  key: PEDIDOS_URL
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: soat3-ms-gateway
+spec:
+  selector:
+    app: soat3-ms-gateway
+  ports:
+    - protocol: TCP
+      port: 9090
+      targetPort: 9090
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: soat3-config
+data:
+  CLIENTES_URL: "http://clientes-service:8080"
+  PRODUTOS_URL: "http://produtos-service:8080"
+  PAGAMENTOS_URL: "http://pagamentos-service:8080"
+  PEDIDOS_URL: "http://pedidos-service:8080"
