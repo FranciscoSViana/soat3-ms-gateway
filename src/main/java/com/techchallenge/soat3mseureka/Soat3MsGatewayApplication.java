@@ -32,10 +32,10 @@ public class Soat3MsGatewayApplication {
 	@Bean
 	public RouteLocator routes(RouteLocatorBuilder builder) {
 		return builder.routes()
-				.route("soat3-ms-clientes", r -> r.path("/v1/clientes/**").uri(clientesURL))
-				.route("soat3-ms-produtos", r -> r.path("/v1/produtos/**").uri(produtosURL))
-				.route("soat3-ms-pagamentos", r -> r.path("/v1/pagamentos/**").uri(pagamentosURL))
-				.route("soat3-ms-pedidos", r -> r.path("/v1/pedidos/**").uri(pedidosURL))
+				.route("soat3-ms-clientes", r -> r.path("/v1/clientes/**").uri("http://localhost:8080"))
+				.route("soat3-ms-produtos", r -> r.path("/v1/produtos/**").uri("http://localhost:8081"))
+				.route("soat3-ms-pagamentos", r -> r.path("/v1/pagamentos/**").uri("http://localhost:8082"))
+				.route("soat3-ms-pedidos", r -> r.path("/v1/pedidos/**").uri("http://localhost:8083"))
 				.build();
 	}
 

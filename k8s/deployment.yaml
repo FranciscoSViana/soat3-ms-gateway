@@ -56,7 +56,7 @@ kind: ConfigMap
 metadata:
   name: soat3-config
 data:
-  CLIENTES_URL: "http://clientes-service:8080"
+  CLIENTES_URL: "soat3-ms-clientes-service:8080"
   PRODUTOS_URL: "http://produtos-service:8080"
   PAGAMENTOS_URL: "http://pagamentos-service:8080"
   PEDIDOS_URL: "http://pedidos-service:8080"
