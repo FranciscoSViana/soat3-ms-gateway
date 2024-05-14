@@ -58,6 +58,6 @@ metadata:
   name: soat3-config
 data:
   CLIENTES_URL: "http://soat3-ms-clientes-service.default.svc.cluster.local:8080"
-  PRODUTOS_URL: "http://produtos-service:8080"
+  PRODUTOS_URL: "http://soat3-ms-produtos-service.default.svc.cluster.local:8081"
   PAGAMENTOS_URL: "http://pagamentos-service:8080"
   PEDIDOS_URL: "http://pedidos-service:8080"
